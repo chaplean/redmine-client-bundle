@@ -1,0 +1,13 @@
+parameters:
+    chaplean_redmine_client.api.access_token: '%chaplean_redmine_client.access_token%'
+    chaplean_redmine_client.api.url: '%chaplean_redmine_client.url%'
+
+services:
+    redmine_api:
+        class: Chaplean\Bundle\RedmineClientBundle\API\RedmineApi
+        arguments:
+            - '@guzzle.client.redmine_api'
+            - '@event_dispatcher'
+            - '%chaplean_redmine_client.api.url%'
+            - '%chaplean_redmine_client.api.access_token%'
+

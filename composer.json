@@ -1,0 +1,45 @@
+{
+    "name": "chaplean/redmine-client-bundle",
+    "license": "MIT",
+    "type": "redmine-client-bundle",
+    "description": "Redmine Client Bundle",
+    "authors": [
+        {
+            "name": "Chaplean",
+            "homepage": "http://www.chaplean.coop"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Chaplean\\Bundle\\RedmineClientBundle\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Chaplean\\Bundle\\RedmineClientBundle\\": "Tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.8",
+        "chaplean/rest-client-bundle": "^1.0",
+        "symfony/config": "^2.8 || ^3.0 || ^4.0",
+        "symfony/console": "^2.8 || ^3.0 || ^4.0",
+        "symfony/dependency-injection": "^2.7 || ^3.0 || ^4.0",
+        "symfony/yaml": "^2.8 || ^3.0 || ^4.0"
+    },
+    "require-dev": {
+        "chaplean/codeship-scripts": "^1.0",
+        "chaplean/coding-standard": "^1.1",
+        "mockery/mockery": "dev-master",
+        "phpunit/phpunit": "^6.3",
+        "satooshi/php-coveralls": "dev-master",
+        "symfony/http-kernel": "^2.8 || ^3.0 || ^4.0",
+        "symfony/var-dumper": "^2.8 || ^3.0 || ^4.0"
+    },
+    "config": {
+        "bin-dir": "bin",
+        "discard-changes": true,
+        "sort-packages": true
+    }
+}
+

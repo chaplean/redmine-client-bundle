@@ -1,0 +1,3 @@
+guzzle:
+    clients:
+        redmine_api: ~
