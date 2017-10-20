@@ -85,10 +85,10 @@ class RedmineApiTest extends TestCase
      */
     public function testGetRoutes()
     {
-        $methods = ['projects', 'project', 'users', 'user', 'issues', 'issue', 'times', 'time'];
+        $methods = ['projects', 'project', 'users', 'user', 'issues', 'issue', 'times', 'time', 'trackers'];
 
         $this->assertArrayHasKey('get', $this->routes);
-        $this->assertCount(8, $this->routes['get']);
+        $this->assertCount(9, $this->routes['get']);
         foreach ($methods as $method) {
             $this->assertArrayHasKey($method, $this->routes['get']);
         }

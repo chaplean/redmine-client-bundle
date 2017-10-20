@@ -20,6 +20,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  * @method Route        getIssue()
  * @method Route        getTimes()
  * @method Route        getTime()
+ * @method Route        getTrackers()
  *
  * @method RequestRoute postProjects()
  * @method RequestRoute postUsers()
@@ -468,5 +469,7 @@ class RedmineApi extends AbstractApi
                         ->requireAtLeastOneOf(['issue_id', 'project_id'])
                 ]
             );
+
+        $this->get('trackers', 'trackers.json');
     }
 }
