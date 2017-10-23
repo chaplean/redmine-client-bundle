@@ -4,7 +4,7 @@ parameters:
 
 services:
     redmine_api:
-        class: Chaplean\Bundle\RedmineClientBundle\API\RedmineApi
+        class: Chaplean\Bundle\RedmineClientBundle\Api\RedmineApi
         arguments:
             - '@guzzle.client.redmine_api'
             - '@event_dispatcher'
