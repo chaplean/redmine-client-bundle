@@ -206,7 +206,9 @@ class RedmineApi extends AbstractApi
                     'issue_id' => Parameter::id()
                         ->optional(), // not in the actual documentation
                     'user_id'  => Parameter::id()
-                        ->optional(), // not in the actual documentation
+                        ->optional(), // not in the actual documentation,
+                    'limit'  => Parameter::int()
+                        ->optional()
                 ]
             );
 
