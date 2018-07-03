@@ -18,6 +18,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  * @method Route        getUser()
  * @method Route        getIssues()
  * @method Route        getIssue()
+ * @method Route        getIssueStatuses()
  * @method Route        getTimes()
  * @method Route        getTime()
  * @method Route        getTrackers()
@@ -197,6 +198,8 @@ class RedmineApi extends AbstractApi
                         ->optional()
                 ]
             );
+
+        $this->get('issueStatuses', 'issue_statuses.json');
 
         $this->get('times', 'time_entries.json')
             ->queryParameters(
