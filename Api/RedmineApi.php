@@ -4,7 +4,6 @@ namespace Chaplean\Bundle\RedmineClientBundle\Api;
 
 use Chaplean\Bundle\RestClientBundle\Api\AbstractApi;
 use Chaplean\Bundle\RestClientBundle\Api\Parameter;
-use Chaplean\Bundle\RestClientBundle\Api\RequestRoute;
 use Chaplean\Bundle\RestClientBundle\Api\Route;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -12,31 +11,31 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * Class RedmineApi
  *
- * @method Route        getProjects()
- * @method Route        getProject()
- * @method Route        getUsers()
- * @method Route        getUser()
- * @method Route        getIssues()
- * @method Route        getIssue()
- * @method Route        getIssueStatuses()
- * @method Route        getTimes()
- * @method Route        getTime()
- * @method Route        getTrackers()
+ * @method Route getProjects()
+ * @method Route getProject()
+ * @method Route getUsers()
+ * @method Route getUser()
+ * @method Route getIssues()
+ * @method Route getIssue()
+ * @method Route getIssueStatuses()
+ * @method Route getTimes()
+ * @method Route getTime()
+ * @method Route getTrackers()
  *
- * @method RequestRoute postProjects()
- * @method RequestRoute postUsers()
- * @method RequestRoute postIssues()
- * @method RequestRoute postTimes()
+ * @method Route postProjects()
+ * @method Route postUsers()
+ * @method Route postIssues()
+ * @method Route postTimes()
  *
- * @method RequestRoute putProjects()
- * @method RequestRoute putUsers()
- * @method RequestRoute putIssues()
- * @method RequestRoute putTimes()
+ * @method Route putProjects()
+ * @method Route putUsers()
+ * @method Route putIssues()
+ * @method Route putTimes()
  *
- * @method Route        deleteProjects()
- * @method Route        deleteUsers()
- * @method Route        deleteIssues()
- * @method Route        deleteTimes()
+ * @method Route deleteProjects()
+ * @method Route deleteUsers()
+ * @method Route deleteIssues()
+ * @method Route deleteTimes()
  *
  * @author    Hugo - Chaplean <hugo@chaplean.coop>
  * @copyright 2014 - 2017 Chaplean (http://www.chaplean.coop)
@@ -210,7 +209,7 @@ class RedmineApi extends AbstractApi
                         ->optional(), // not in the actual documentation
                     'user_id'  => Parameter::id()
                         ->optional(), // not in the actual documentation,
-                    'limit'  => Parameter::int()
+                    'limit'    => Parameter::int()
                         ->optional()
                 ]
             );
@@ -325,12 +324,15 @@ class RedmineApi extends AbstractApi
                                 ->optional(),
                             'parent_issue_id'  => Parameter::id()
                                 ->optional(),
-                            'custom_fields'    => Parameter::arrayList(Parameter::object(
-                                [
-                                    'id' => Parameter::id(),
-                                    'value' => Parameter::untyped()
-                                ]
-                            ))->optional(),
+                            'custom_fields'    => Parameter::arrayList(
+                                Parameter::object(
+                                    [
+                                        'id'    => Parameter::id(),
+                                        'value' => Parameter::untyped()
+                                    ]
+                                )
+                            )
+                                ->optional(),
                             'watcher_user_ids' => Parameter::arrayList(Parameter::id())
                                 ->optional(),
                             'is_private'       => Parameter::bool()
@@ -427,12 +429,15 @@ class RedmineApi extends AbstractApi
                                 ->optional(),
                             'parent_issue_id'  => Parameter::id()
                                 ->optional(),
-                            'custom_fields'    => Parameter::arrayList(Parameter::object(
-                                [
-                                    'id' => Parameter::id(),
-                                    'value' => Parameter::untyped()
-                                ]
-                            ))->optional(),
+                            'custom_fields'    => Parameter::arrayList(
+                                Parameter::object(
+                                    [
+                                        'id'    => Parameter::id(),
+                                        'value' => Parameter::untyped()
+                                    ]
+                                )
+                            )
+                                ->optional(),
                             'watcher_user_ids' => Parameter::arrayList(Parameter::id())
                                 ->optional(),
                             'is_private'       => Parameter::bool()
