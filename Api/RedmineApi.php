@@ -2,9 +2,9 @@
 
 namespace Chaplean\Bundle\RedmineClientBundle\Api;
 
-use Chaplean\Bundle\RestClientBundle\Api\AbstractApi;
-use Chaplean\Bundle\RestClientBundle\Api\Parameter;
-use Chaplean\Bundle\RestClientBundle\Api\Route;
+use Chaplean\Bundle\ApiClientBundle\Api\AbstractApi;
+use Chaplean\Bundle\ApiClientBundle\Api\Parameter;
+use Chaplean\Bundle\ApiClientBundle\Api\Route;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -324,15 +324,12 @@ class RedmineApi extends AbstractApi
                                 ->optional(),
                             'parent_issue_id'  => Parameter::id()
                                 ->optional(),
-                            'custom_fields'    => Parameter::arrayList(
-                                Parameter::object(
-                                    [
-                                        'id'    => Parameter::id(),
-                                        'value' => Parameter::untyped()
-                                    ]
-                                )
-                            )
-                                ->optional(),
+                            'custom_fields'    => Parameter::arrayList(Parameter::object(
+                                [
+                                    'id' => Parameter::id(),
+                                    'value' => Parameter::untyped()
+                                ]
+                            ))->optional(),
                             'watcher_user_ids' => Parameter::arrayList(Parameter::id())
                                 ->optional(),
                             'is_private'       => Parameter::bool()
@@ -429,15 +426,12 @@ class RedmineApi extends AbstractApi
                                 ->optional(),
                             'parent_issue_id'  => Parameter::id()
                                 ->optional(),
-                            'custom_fields'    => Parameter::arrayList(
-                                Parameter::object(
-                                    [
-                                        'id'    => Parameter::id(),
-                                        'value' => Parameter::untyped()
-                                    ]
-                                )
-                            )
-                                ->optional(),
+                            'custom_fields'    => Parameter::arrayList(Parameter::object(
+                                [
+                                    'id' => Parameter::id(),
+                                    'value' => Parameter::untyped()
+                                ]
+                            ))->optional(),
                             'watcher_user_ids' => Parameter::arrayList(Parameter::id())
                                 ->optional(),
                             'is_private'       => Parameter::bool()
