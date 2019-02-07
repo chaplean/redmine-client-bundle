@@ -6,7 +6,7 @@ services:
     redmine_api:
         class: Chaplean\Bundle\RedmineClientBundle\Api\RedmineApi
         arguments:
-            - '@guzzle.client.redmine_api'
+            - '@eight_points_guzzle.client.redmine_api'
             - '@event_dispatcher'
             - '%chaplean_redmine_client.api.url%'
             - '%chaplean_redmine_client.api.access_token%'
